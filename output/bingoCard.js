@@ -61,11 +61,13 @@
 
 	  render: function render() {
 	    return _react2.default.createElement(
-	      "p",
+	      "div",
 	      null,
-	      "Hello, ",
-	      this.props.greetTarget,
-	      "!"
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        this
+	      )
 	    );
 	  }
 	});
@@ -73,12 +75,7 @@
 	_reactDom2.default.render(_react2.default.createElement(
 	  "div",
 	  null,
-	  _react2.default.createElement(HelloWorld, { greetTarget: "Pizza Lady" }),
-	  _react2.default.createElement(HelloWorld, { greetTarget: "Bungh0" }),
-	  _react2.default.createElement(HelloWorld, { greetTarget: "Br00klyn Lady" }),
-	  _react2.default.createElement(HelloWorld, { greetTarget: "Gr0ce" }),
-	  _react2.default.createElement(HelloWorld, { greetTarget: "Swede" }),
-	  _react2.default.createElement(HelloWorld, { greetTarget: "Jesterwalky" })
+	  "Pizza Lady!"
 	), document.querySelector("#container"));
 
 /***/ },
