@@ -11,12 +11,12 @@ let bingoCard = React.createClass({
 
 ReactDOM.render(
   <div>
-    <HelloWorld greetTarget="Pizza Lady"/>
-    <HelloWorld greetTarget="Bungh0"/>
-    <HelloWorld greetTarget="Br00klyn Lady"/>
-    <HelloWorld greetTarget="Gr0ce"/>
-    <HelloWorld greetTarget="Swede"/>
-    <HelloWorld greetTarget="Jesterwalky"/>
+    <bingoCard greetTarget="Pizza Lady"/>
+    <bingoCard greetTarget="Bungh0"/>
+    <bingoCard greetTarget="Br00klyn Lady"/>
+    <bingoCard greetTarget="Gr0ce"/>
+    <bingoCard greetTarget="Swede"/>
+    <bingoCard greetTarget="Jesterwalky"/>
   </div>,
   document.querySelector("#container")
 );
