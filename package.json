@@ -4,7 +4,8 @@
   "description": "A Bingo Card you can shuffle, fill values with, and mark",
   "main": "index.js",
   "dependencies": {
-    "react": "^15.4.1"
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
   },
   "devDependencies": {},
   "scripts": {
