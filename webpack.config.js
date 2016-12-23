@@ -9,6 +9,12 @@ let config = {
   output: {
     path: OUTPUT,
     filename: "bingoCard.js"
+  },
+  module: {
+    loaders: [{
+        include: DEV,
+        loader: "babel",
+    }]
   }
 };
 
