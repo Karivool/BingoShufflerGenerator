@@ -5,7 +5,11 @@ let bingoCard = React.createClass({
   render: function() {
     return (
       <div>
-        <p>{this}</p>
+        <p>[][][][][]</p>
+        <p>[][][][][]</p>
+        <p>[][][][][]</p>
+        <p>[][][][][]</p>
+        <p>[][][][][]</p>
       </div>
     );
   }
@@ -13,6 +17,11 @@ let bingoCard = React.createClass({
 
 ReactDOM.render(
   <div>
+    <p>[][][][][]</p>
+    <p>[][][][][]</p>
+    <p>[][][][][]</p>
+    <p>[][][][][]</p>
+    <p>[][][][][]</p>
     Pizza Lady!
   </div>,
   document.querySelector("#container")
