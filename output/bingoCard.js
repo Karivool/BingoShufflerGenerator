@@ -66,7 +66,27 @@
 	      _react2.default.createElement(
 	        "p",
 	        null,
-	        this
+	        "[][][][][]"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "[][][][][]"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "[][][][][]"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "[][][][][]"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "[][][][][]"
 	      )
 	    );
 	  }
@@ -75,6 +95,31 @@
 	_reactDom2.default.render(_react2.default.createElement(
 	  "div",
 	  null,
+	  _react2.default.createElement(
+	    "p",
+	    null,
+	    "[][][][][]"
+	  ),
+	  _react2.default.createElement(
+	    "p",
+	    null,
+	    "[][][][][]"
+	  ),
+	  _react2.default.createElement(
+	    "p",
+	    null,
+	    "[][][][][]"
+	  ),
+	  _react2.default.createElement(
+	    "p",
+	    null,
+	    "[][][][][]"
+	  ),
+	  _react2.default.createElement(
+	    "p",
+	    null,
+	    "[][][][][]"
+	  ),
 	  "Pizza Lady!"
 	), document.querySelector("#container"));
 
