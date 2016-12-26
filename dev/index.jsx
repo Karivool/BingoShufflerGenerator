@@ -1,6 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+const BingoDefaults = require('../constants/defaults.js')
+const RRelationships = require('../constants/rrelationships.js')
+
+
 let bingoCard = React.createClass({
   render: function() {
     return (
@@ -16,13 +20,6 @@ let bingoCard = React.createClass({
 });
 
 ReactDOM.render(
-  <div>
-    <p>[][][][][]</p>
-    <p>[][][][][]</p>
-    <p>[][][][][]</p>
-    <p>[][][][][]</p>
-    <p>[][][][][]</p>
-    Pizza Lady!
-  </div>,
+  React.createElement(bingoCard),
   document.querySelector("#container")
 );
