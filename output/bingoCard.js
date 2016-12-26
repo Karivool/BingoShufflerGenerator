@@ -65,30 +65,30 @@
 	  render: function render() {
 	    return _react2.default.createElement(
 	      "div",
-	      null,
+	      { className: "bingocard" },
 	      _react2.default.createElement(
 	        "p",
-	        null,
+	        { className: "bingocard-row" },
 	        "[][][][][]"
 	      ),
 	      _react2.default.createElement(
 	        "p",
-	        null,
+	        { className: "bingocard-row" },
 	        "[][][][][]"
 	      ),
 	      _react2.default.createElement(
 	        "p",
-	        null,
+	        { className: "bingocard-row" },
 	        "[][][][][]"
 	      ),
 	      _react2.default.createElement(
 	        "p",
-	        null,
+	        { className: "bingocard-row" },
 	        "[][][][][]"
 	      ),
 	      _react2.default.createElement(
 	        "p",
-	        null,
+	        { className: "bingocard-row" },
 	        "[][][][][]"
 	      )
 	    );

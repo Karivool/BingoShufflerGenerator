@@ -8,12 +8,12 @@ const RRelationships = require('../constants/rrelationships.js')
 let bingoCard = React.createClass({
   render: function() {
     return (
-      <div>
-        <p>[][][][][]</p>
-        <p>[][][][][]</p>
-        <p>[][][][][]</p>
-        <p>[][][][][]</p>
-        <p>[][][][][]</p>
+      <div className="bingocard">
+        <p className="bingocard-row">[][][][][]</p>
+        <p className="bingocard-row">[][][][][]</p>
+        <p className="bingocard-row">[][][][][]</p>
+        <p className="bingocard-row">[][][][][]</p>
+        <p className="bingocard-row">[][][][][]</p>        
       </div>
     );
   }
