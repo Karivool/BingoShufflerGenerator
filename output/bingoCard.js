@@ -66,31 +66,7 @@
 	    return _react2.default.createElement(
 	      "div",
 	      { className: "bingocard" },
-	      _react2.default.createElement(
-	        "p",
-	        { className: "bingocard-row" },
-	        "[][][][][]"
-	      ),
-	      _react2.default.createElement(
-	        "p",
-	        { className: "bingocard-row" },
-	        "[][][][][]"
-	      ),
-	      _react2.default.createElement(
-	        "p",
-	        { className: "bingocard-row" },
-	        "[][][][][]"
-	      ),
-	      _react2.default.createElement(
-	        "p",
-	        { className: "bingocard-row" },
-	        "[][][][][]"
-	      ),
-	      _react2.default.createElement(
-	        "p",
-	        { className: "bingocard-row" },
-	        "[][][][][]"
-	      )
+	      _react2.default.createElement("p", { className: "bingocard-square" })
 	    );
 	  }
 	});

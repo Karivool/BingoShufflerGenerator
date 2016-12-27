@@ -7,13 +7,14 @@ const RRelationships = require('../constants/rrelationships.js')
 
 let bingoCard = React.createClass({
   render: function() {
+    const bingoSquares = [];
+
     return (
       <div className="bingocard">
-        <p className="bingocard-row">[][][][][]</p>
-        <p className="bingocard-row">[][][][][]</p>
-        <p className="bingocard-row">[][][][][]</p>
-        <p className="bingocard-row">[][][][][]</p>
-        <p className="bingocard-row">[][][][][]</p>        
+        { bingoSquares.map(function (){
+
+        })}
+        <p className="bingocard-square"></p>
       </div>
     );
   }
