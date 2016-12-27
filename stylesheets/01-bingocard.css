@@ -1,6 +1,13 @@
-bingocard {
-  display: block;
-  width: 100%;
-  height: auto;
-  background-color: red;
+.bingocard {
+  height: 550px;
+  width: 550px;
+  background: cadetblue;
+}
+
+.bingocard-square {
+  width: 100px;
+  height: 100px;
+  background: lavenderblush;
+  border-color: black;
+  border: solid 5px;
 }
