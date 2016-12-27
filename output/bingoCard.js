@@ -63,10 +63,27 @@
 	  displayName: "bingoCard",
 
 	  render: function render() {
+	    var bingoSquares = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
+
 	    return _react2.default.createElement(
 	      "div",
-	      { className: "bingocard" },
-	      _react2.default.createElement("p", { className: "bingocard-square" })
+	      { className: "bingo" },
+	      _react2.default.createElement(
+	        "div",
+	        { className: "title" },
+	        "BINGO!"
+	      ),
+	      _react2.default.createElement(
+	        "div",
+	        { className: "bingocard" },
+	        RRelationships.map(function (square, idx) {
+	          return _react2.default.createElement(
+	            "p",
+	            { className: "bingocard-square" },
+	            square
+	          );
+	        })
+	      )
 	    );
 	  }
 	});
@@ -21500,8 +21517,7 @@
 /* 179 */
 /***/ function(module, exports) {
 
-	const RRelationships = {
-	  spaces: ["Open up the relationship",
+	const RRelationships = ["Open up the relationship",
 	  "Btw, someone's pregnant",
 	  "Hardcore gamer",
 	  "Doesn't wash body properly",
@@ -21525,8 +21541,7 @@
 	  "Weird fetish",
 	  "A non-issue is mentioned",
 	  "Double standards",
-	  "Everyone is terrible"]
-	};
+	  "Everyone is terrible"];
 
 	module.exports = RRelationships;
 
