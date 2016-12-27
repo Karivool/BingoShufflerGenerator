@@ -1,5 +1,4 @@
-const RRelationships = {
-  spaces: ["Open up the relationship",
+const RRelationships = ["Open up the relationship",
   "Btw, someone's pregnant",
   "Hardcore gamer",
   "Doesn't wash body properly",
@@ -23,7 +22,6 @@ const RRelationships = {
   "Weird fetish",
   "A non-issue is mentioned",
   "Double standards",
-  "Everyone is terrible"]
-};
+  "Everyone is terrible"];
 
 module.exports = RRelationships;
