@@ -1,8 +1,8 @@
 .bingocard {
   height: 550px;
   width: 550px;
-  background: cadetblue;
   padding: 50px;
+  background: lavender;
 }
 
 .bingocard-square {
@@ -23,6 +23,8 @@
 }
 
 .title {
+  width: 100%;
+  margin-left: 48px;
   position: absolute;
   font:normal 30pt Arial;
   color:#FFFFFF;
@@ -38,4 +40,24 @@
   0 5px 10px rgba(0,0,0,.25),
   0 10px 10px rgba(0,0,0,.2),
   0 20px 20px rgba(0,0,0,.15);
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.sliding-background {
+  background: url("../rainbow2.jpg") repeat-x;
+  height: 50px;
+  width: 5076px;
+  animation: slide 60s linear infinite;
+}
+
+@keyframes slide{
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    transform: translate3d(-1692px, 0, 0);
+  }
 }
