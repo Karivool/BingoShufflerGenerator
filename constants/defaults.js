@@ -1,4 +1,29 @@
-const BingoDefaults = {  
-};
+const BingoDefault = [
+  "Spelling error",
+  "Missing punctuation",
+  "Wrong scope",
+  "Race condition",
+  "Memory leak",
+  "Syntax error",
+  "Reference error",
+  "Compilation error",
+  "Failure to recompile",
+  "Stack overflow",
+  "Infinite loop",
+  "Arithmetic error",
+  "Off by one",
+  "Undefined/uninitialized",
+  "Bungled conditionals",
+  "Vague variables",
+  "Brute forcing",
+  "Failure to check logs",
+  "No documentation",
+  "Spaghetti",
+  "Edge cases",
+  "Unused code",
+  "Redundant code",
+  "Hard-coding",
+  "=/==/===",
+];
 
-module.exports = BingoDefaults;
+module.exports = BingoDefault;
