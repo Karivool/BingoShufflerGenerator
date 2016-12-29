@@ -22,6 +22,23 @@
   border-color: crimson;
 }
 
+.bingocard-selected {
+  font-family: 'Dosis', sans-serif;
+  width: 100px;
+  height: 100px;
+  background: lavenderblush;
+  border-color: black;
+  border: solid 5px;
+  float: left;
+  text-align: center;
+  cursor: pointer;
+}
+
+.bingocard-selected:hover {
+  background: chartreuse;
+  border-color: white;
+}
+
 .title {
   width: 100%;
   margin-left: 48px;
