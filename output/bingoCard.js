@@ -61,13 +61,34 @@
 
 	var bingoCard = _react2.default.createClass({
 	  displayName: "bingoCard",
+	  getInitialState: function getInitialState() {
+	    return {
+	      bingoSquares: [],
+	      squareCount: 0,
+	      bingoValues: this.setMultipleFalse(false)
+	    };
+	  },
+	  setMultipleFalse: function setMultipleFalse(val) {
+	    var array = [];
+	    for (var times = 0; times < 25; times++) {
+	      array.push(val);
+	    }
+	    return array;
+	  },
 	  squareClicked: function squareClicked(idx) {
-	    console.log(idx);
+	    var valChange = this.state.bingoValues;
+	    valChange[idx] = !valChange[idx];
+
+	    this.setState({
+	      bingoValues: valChange
+	    });
+	    console.log(this.state.bingoValues);
 	  },
 
 
 	  render: function render() {
-	    var bingoSquares = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
+	    var bingoSquares = [[]];
+	    var bingoValues = this.state.bingoValues;
 
 	    return _react2.default.createElement(
 	      "div",
@@ -85,7 +106,7 @@
 	            "p",
 	            {
 	              key: "square-" + idx,
-	              className: "bingocard-square",
+	              className: bingoValues[idx] === true ? "bingocard-square" : "bingocard-selected",
 	              onClick: this.squareClicked.bind(this, idx)
 	            },
 	            square

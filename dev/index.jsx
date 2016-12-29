@@ -6,19 +6,35 @@ const RRelationships = require('../constants/rrelationships.js')
 
 
 let bingoCard = React.createClass({
+  getInitialState () {
+    return {
+      bingoSquares: [],
+      squareCount: 0,
+      bingoValues: this.setMultipleFalse(false)
+    };
+  },
+
+  setMultipleFalse (val) {
+    let array = [];
+    for (let times = 0; times < 25; times++) {
+      array.push(val);
+    }
+    return array;
+  },
 
   squareClicked(idx) {
-    console.log(idx);
+    let valChange = this.state.bingoValues;
+    valChange[idx] = !valChange[idx];
+
+    this.setState({
+      bingoValues: valChange
+    });
+    console.log(this.state.bingoValues);
   },
 
   render: function() {
-    const bingoSquares = [
-      [],[],[],[],[],
-      [],[],[],[],[],
-      [],[],[],[],[],
-      [],[],[],[],[],
-      [],[],[],[],[],
-    ];
+    const bingoSquares = [[]];
+    const bingoValues = this.state.bingoValues;
 
     return (
       <div className="bingo">
@@ -27,7 +43,7 @@ let bingoCard = React.createClass({
           { RRelationships.map(function (square, idx){
             return <p
               key={"square-" + idx}
-              className="bingocard-square"
+              className={bingoValues[idx] === true ? "bingocard-square" : "bingocard-selected"}
               onClick={this.squareClicked.bind(this, idx)}
               >{square}
             </p>
