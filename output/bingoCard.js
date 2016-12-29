@@ -106,7 +106,7 @@
 	            "p",
 	            {
 	              key: "square-" + idx,
-	              className: bingoValues[idx] === true ? "bingocard-square" : "bingocard-selected",
+	              className: bingoValues[idx] === true ? "bingocard-selected" : "bingocard-square",
 	              onClick: this.squareClicked.bind(this, idx)
 	            },
 	            square
