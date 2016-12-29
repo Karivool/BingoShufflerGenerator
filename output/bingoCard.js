@@ -61,6 +61,10 @@
 
 	var bingoCard = _react2.default.createClass({
 	  displayName: "bingoCard",
+	  squareClicked: function squareClicked(idx) {
+	    console.log(idx);
+	  },
+
 
 	  render: function render() {
 	    var bingoSquares = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
@@ -79,10 +83,14 @@
 	        RRelationships.map(function (square, idx) {
 	          return _react2.default.createElement(
 	            "p",
-	            { className: "bingocard-square" },
+	            {
+	              key: "square-" + idx,
+	              className: "bingocard-square",
+	              onClick: this.squareClicked.bind(this, idx)
+	            },
 	            square
 	          );
-	        })
+	        }.bind(this))
 	      )
 	    );
 	  }
