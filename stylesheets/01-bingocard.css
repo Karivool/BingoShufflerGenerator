@@ -18,24 +18,26 @@
 }
 
 .bingocard-square:hover {
-  background: chartreuse;
-  border-color: crimson;
+  background: khaki;
+  border-color: goldenrod;
 }
 
 .bingocard-selected {
   font-family: 'Dosis', sans-serif;
+  font-weight: 600;
   width: 100px;
   height: 100px;
-  background: lavenderblush;
+  background: darkslateblue;
   border-color: black;
   border: solid 5px;
+  color: aquamarine;
   float: left;
   text-align: center;
   cursor: pointer;
 }
 
 .bingocard-selected:hover {
-  background: chartreuse;
+  background: blue;
   border-color: white;
 }
 
