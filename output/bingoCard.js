@@ -56,17 +56,30 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var BingoDefaults = __webpack_require__(178);
+	var Default = __webpack_require__(178);
 	var RRelationships = __webpack_require__(179);
 
 	var bingoCard = _react2.default.createClass({
 	  displayName: "bingoCard",
 	  getInitialState: function getInitialState() {
+	    var url = window.location.href.split('?')[1];
+	    var options = url === "rrelationships" ? RRelationships : Default;
+
 	    return {
 	      bingoSquares: [],
 	      squareCount: 0,
-	      bingoValues: this.setMultipleFalse(false)
+	      bingoValues: this.setMultipleFalse(false),
+	      bingoOptions: this.shuffle(options)
 	    };
+	  },
+	  shuffle: function shuffle(arr) {
+	    for (var idx = arr.length; idx; idx--) {
+	      var rand = Math.floor(Math.random() * idx);
+	      var _ref = [arr[rand], arr[idx - 1]];
+	      arr[idx - 1] = _ref[0];
+	      arr[rand] = _ref[1];
+	    }
+	    return arr;
 	  },
 	  setMultipleFalse: function setMultipleFalse(val) {
 	    var array = [];
@@ -78,17 +91,27 @@
 	  squareClicked: function squareClicked(idx) {
 	    var valChange = this.state.bingoValues;
 	    valChange[idx] = !valChange[idx];
+	    if (valChange[idx]) {
+	      this.setState({
+	        squareCount: this.state.squareCount += 1
+	      });
+	    } else {
+	      this.setState({
+	        squareCount: this.state.squareCount -= 1
+	      });
+	    }
+	    console.log(this.state.squareCount);
 
 	    this.setState({
 	      bingoValues: valChange
 	    });
-	    console.log(this.state.bingoValues);
 	  },
 
 
 	  render: function render() {
 	    var bingoSquares = [[]];
 	    var bingoValues = this.state.bingoValues;
+	    var bingoOptions = this.state.bingoOptions;
 
 	    return _react2.default.createElement(
 	      "div",
@@ -101,7 +124,7 @@
 	      _react2.default.createElement(
 	        "div",
 	        { className: "bingocard" },
-	        RRelationships.map(function (square, idx) {
+	        bingoOptions.map(function (square, idx) {
 	          return _react2.default.createElement(
 	            "p",
 	            {
@@ -21536,10 +21559,35 @@
 /* 178 */
 /***/ function(module, exports) {
 
-	const BingoDefaults = {  
-	};
+	const BingoDefault = [
+	  "Spelling error",
+	  "Missing punctuation",
+	  "Wrong scope",
+	  "Race condition",
+	  "Memory leak",
+	  "Syntax error",
+	  "Reference error",
+	  "Compilation error",
+	  "Failure to recompile",
+	  "Stack overflow",
+	  "Infinite loop",
+	  "Arithmetic error",
+	  "Off by one",
+	  "Undefined/uninitialized",
+	  "Bungled conditionals",
+	  "Vague variables",
+	  "Brute forcing",
+	  "Failure to check logs",
+	  "No documentation",
+	  "Spaghetti",
+	  "Edge cases",
+	  "Unused code",
+	  "Redundant code",
+	  "Hard-coding",
+	  "=/==/===",
+	];
 
-	module.exports = BingoDefaults;
+	module.exports = BingoDefault;
 
 
 /***/ },

@@ -1,17 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const BingoDefaults = require('../constants/defaults.js')
+const Default = require('../constants/defaults.js')
 const RRelationships = require('../constants/rrelationships.js')
 
 
 let bingoCard = React.createClass({
   getInitialState () {
+    let url = window.location.href.split('?')[1];
+    const options = (url === "rrelationships") ? RRelationships : Default;
+
     return {
       bingoSquares: [],
       squareCount: 0,
-      bingoValues: this.setMultipleFalse(false)
+      bingoValues: this.setMultipleFalse(false),
+      bingoOptions: this.shuffle(options)
     };
+  },
+
+  shuffle(arr) {
+    for (let idx = arr.length; idx; idx--) {
+      let rand = Math.floor(Math.random() * idx);
+      [arr[idx - 1], arr[rand]] = [arr[rand], arr[idx - 1]];
+    }
+    return arr;
   },
 
   setMultipleFalse (val) {
@@ -25,22 +37,32 @@ let bingoCard = React.createClass({
   squareClicked(idx) {
     let valChange = this.state.bingoValues;
     valChange[idx] = !valChange[idx];
+    if (valChange[idx]) {
+      this.setState({
+        squareCount: this.state.squareCount += 1
+      });
+    } else {
+      this.setState({
+        squareCount: this.state.squareCount -= 1
+      });
+    }
+    console.log(this.state.squareCount);
 
     this.setState({
       bingoValues: valChange
     });
-    console.log(this.state.bingoValues);
   },
 
   render: function() {
     const bingoSquares = [[]];
     const bingoValues = this.state.bingoValues;
+    const bingoOptions = this.state.bingoOptions;
 
     return (
       <div className="bingo">
         <div className="title">BINGO!</div>
         <div className="bingocard">
-          { RRelationships.map(function (square, idx){
+          { bingoOptions.map(function (square, idx){
             return <p
               key={"square-" + idx}
               className={bingoValues[idx] === true ? "bingocard-selected" : "bingocard-square"}
