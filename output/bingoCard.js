@@ -69,7 +69,8 @@
 	      bingoSquares: [],
 	      squareCount: 0,
 	      bingoValues: this.setMultipleFalse(false),
-	      bingoOptions: this.shuffle(options)
+	      bingoOptions: this.shuffle(options),
+	      isBingo: false
 	    };
 	  },
 	  shuffle: function shuffle(arr) {
@@ -100,12 +101,54 @@
 	        squareCount: this.state.squareCount -= 1
 	      });
 	    }
-	    console.log(this.state.squareCount);
+	    if (this.state.squareCount >= 5) {
+	      this.setState({
+	        isBingo: this.bingoCheck
+	      });
+	    };
 
 	    this.setState({
 	      bingoValues: valChange
 	    });
 	  },
+	  bingoCheck: function bingoCheck() {
+	    var sqIdx = this.state.bingoSquares;
+	    var sqVal = this.state.bingoValues;
+	    var trueCount = void 0;
+
+	    for (var idx = 0; idx < 4; idx++) {
+	      console.log(idx);
+	      if (sqVal[idx * 5] === false) {
+	        break;
+	      }
+	    };
+	    for (var _idx = 0; _idx < 4; _idx++) {
+	      console.log(_idx);
+	      if (sqVal[_idx + 5] === false) {
+	        break;
+	      }
+	    };
+	    for (var _idx2 = 0; _idx2 < 4; _idx2++) {
+	      console.log(_idx2);
+	      if (sqVal[_idx2 + 6] === false) {
+	        break;
+	      }
+	    };
+	    for (var _idx3 = 20; _idx3 > 4; _idx3 - 4) {
+	      console.log(_idx3);
+	      if (sqVal[_idx3 - 4] === false) {
+	        break;
+	      }
+	    };
+
+	    return true;
+	  },
+
+
+	  // row check: idx: i * 5, range of 4, all true
+	  // col check: idx: i, range of 4, increment by 5
+	  // diag checks: idx: 0, range of 4, increment by 6
+	  //              idx: 20, range of 4, decrement by 4
 
 
 	  render: function render() {
