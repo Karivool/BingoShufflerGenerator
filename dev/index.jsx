@@ -14,7 +14,8 @@ let bingoCard = React.createClass({
       bingoSquares: [],
       squareCount: 0,
       bingoValues: this.setMultipleFalse(false),
-      bingoOptions: this.shuffle(options)
+      bingoOptions: this.shuffle(options),
+      isBingo: false,
     };
   },
 
@@ -46,12 +47,56 @@ let bingoCard = React.createClass({
         squareCount: this.state.squareCount -= 1
       });
     }
-    console.log(this.state.squareCount);
+    if (this.state.squareCount >= 5) {
+      this.setState({
+        isBingo: this.bingoCheck
+      });
+    };
 
     this.setState({
       bingoValues: valChange
     });
   },
+
+  bingoCheck () {
+    let sqIdx = this.state.bingoSquares;
+    let sqVal = this.state.bingoValues;
+    let trueCount;
+
+    for (let idx = 0; idx < 4; idx++) {
+      console.log(idx);
+      if (sqVal[idx * 5] === false) {
+        break
+      }
+    };
+    for (let idx = 0; idx < 4; idx++) {
+      console.log(idx);
+      if (sqVal[idx + 5] === false) {
+        break
+      }
+    };
+    for (let idx = 0; idx < 4; idx++) {
+      console.log(idx);
+      if (sqVal[idx + 6] === false) {
+        break
+      }
+    };
+    for (let idx = 20; idx > 4; idx - 4) {
+      console.log(idx);
+      if (sqVal[idx - 4] === false) {
+        break
+      }
+    };
+
+    return true;
+  },
+
+// row check: idx: i * 5, range of 4, all true
+// col check: idx: i, range of 4, increment by 5
+// diag checks: idx: 0, range of 4, increment by 6
+//              idx: 20, range of 4, decrement by 4
+
+
 
   render: function() {
     const bingoSquares = [[]];
