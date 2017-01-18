@@ -82,6 +82,8 @@
 	    }
 	    return arr;
 	  },
+
+	  // Python, Ruby, Ruby on Rails, JavaScript, React, Flux,  SQL, Git, HTML5, CSS
 	  setMultipleFalse: function setMultipleFalse(val) {
 	    var array = [];
 	    for (var times = 0; times < 25; times++) {
@@ -149,6 +151,12 @@
 	  // col check: idx: i, range of 4, increment by 5
 	  // diag checks: idx: 0, range of 4, increment by 6
 	  //              idx: 20, range of 4, decrement by 4
+	  // 386584309
+	  // ABCDEFGHI
+	  // AGEHBDIFC
+	  // 338085946
+	  // 323795846
+	  // 004,270,100
 
 
 	  render: function render() {
@@ -21637,7 +21645,8 @@
 /* 179 */
 /***/ function(module, exports) {
 
-	const RRelationships = ["Open up the relationship",
+	const RRelationships = [
+	  "Open up the relationship",
 	  "Btw, someone's pregnant",
 	  "Hardcore gamer",
 	  "Doesn't wash body properly",
@@ -21661,7 +21670,9 @@
 	  "Weird fetish",
 	  "A non-issue is mentioned",
 	  "Double standards",
-	  "Everyone is terrible"];
+	  "Everyone is terrible",
+
+	];
 
 	module.exports = RRelationships;
 

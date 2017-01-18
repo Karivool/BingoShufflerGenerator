@@ -26,7 +26,7 @@ let bingoCard = React.createClass({
     }
     return arr;
   },
-
+// Python, Ruby, Ruby on Rails, JavaScript, React, Flux,  SQL, Git, HTML5, CSS
   setMultipleFalse (val) {
     let array = [];
     for (let times = 0; times < 25; times++) {
@@ -95,7 +95,12 @@ let bingoCard = React.createClass({
 // col check: idx: i, range of 4, increment by 5
 // diag checks: idx: 0, range of 4, increment by 6
 //              idx: 20, range of 4, decrement by 4
-
+// 386584309
+// ABCDEFGHI
+// AGEHBDIFC
+// 338085946
+// 323795846
+// 004,270,100
 
 
   render: function() {
