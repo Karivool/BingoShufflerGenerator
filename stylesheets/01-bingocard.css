@@ -1,6 +1,13 @@
+.bingo {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
 .bingocard {
   height: 550px;
-  width: 550px;
+  min-width: 550px;
+  max-width: 550px;
   padding: 50px;
   background: lavender;
 }
@@ -52,8 +59,7 @@
 }
 
 .title {
-  width: 100%;
-  margin-left: 48px;
+  top: 50px;
   position: absolute;
   font:normal 30pt Arial;
   color:#FFFFFF;
