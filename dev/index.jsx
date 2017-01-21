@@ -26,7 +26,7 @@ let bingoCard = React.createClass({
     }
     return arr;
   },
-// Python, Ruby, Ruby on Rails, JavaScript, React, Flux,  SQL, Git, HTML5, CSS
+
   setMultipleFalse (val) {
     let array = [];
     for (let times = 0; times < 25; times++) {
@@ -48,6 +48,7 @@ let bingoCard = React.createClass({
       });
     }
     if (this.state.squareCount >= 5) {
+      console.log(this.state.squareCount);
       this.setState({
         isBingo: this.bingoCheck
       });
@@ -59,6 +60,8 @@ let bingoCard = React.createClass({
   },
 
   bingoCheck () {
+    console.log(this.state.squareCount);
+
     let sqIdx = this.state.bingoSquares;
     let sqVal = this.state.bingoValues;
     let trueCount;

@@ -82,8 +82,6 @@
 	    }
 	    return arr;
 	  },
-
-	  // Python, Ruby, Ruby on Rails, JavaScript, React, Flux,  SQL, Git, HTML5, CSS
 	  setMultipleFalse: function setMultipleFalse(val) {
 	    var array = [];
 	    for (var times = 0; times < 25; times++) {
@@ -104,6 +102,7 @@
 	      });
 	    }
 	    if (this.state.squareCount >= 5) {
+	      console.log(this.state.squareCount);
 	      this.setState({
 	        isBingo: this.bingoCheck
 	      });
@@ -114,6 +113,8 @@
 	    });
 	  },
 	  bingoCheck: function bingoCheck() {
+	    console.log(this.state.squareCount);
+
 	    var sqIdx = this.state.bingoSquares;
 	    var sqVal = this.state.bingoValues;
 	    var trueCount = void 0;
