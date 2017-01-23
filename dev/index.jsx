@@ -48,9 +48,8 @@ let bingoCard = React.createClass({
       });
     }
     if (this.state.squareCount >= 5) {
-      console.log(this.state.squareCount);
       this.setState({
-        isBingo: this.bingoCheck
+        isBingo: this.bingoCheck()
       });
     };
 
@@ -60,38 +59,30 @@ let bingoCard = React.createClass({
   },
 
   bingoCheck () {
-    console.log(this.state.squareCount);
+    let isBingo = false;
 
+    isBingo = this.rowChecker(isBingo, 0, 5, 1, 4);
+    isBingo = this.rowChecker(isBingo, 0, 5, 5, 4);
+    isBingo = this.rowChecker(isBingo, 0, 5, 6, 0);
+    isBingo = this.rowChecker(isBingo, 4, 5, 4, 0);
+
+    return isBingo;
+  },
+
+  rowChecker(isBingo, idx, range, increment, rep) {
     let sqIdx = this.state.bingoSquares;
     let sqVal = this.state.bingoValues;
-    let trueCount;
+    let trueCount = 0;
 
-    for (let idx = 0; idx < 4; idx++) {
-      console.log(idx);
-      if (sqVal[idx * 5] === false) {
-        break
-      }
-    };
-    for (let idx = 0; idx < 4; idx++) {
-      console.log(idx);
-      if (sqVal[idx + 5] === false) {
-        break
-      }
-    };
-    for (let idx = 0; idx < 4; idx++) {
-      console.log(idx);
-      if (sqVal[idx + 6] === false) {
-        break
-      }
-    };
-    for (let idx = 20; idx > 4; idx - 4) {
-      console.log(idx);
-      if (sqVal[idx - 4] === false) {
-        break
-      }
-    };
+    for (let i = idx + rep; i < range; i += increment) {
+      
+    }
 
-    return true;
+    if (trueCount === 5) {
+      isBingo = true;
+    }
+
+    return isBingo;
   },
 
 // row check: idx: i * 5, range of 4, all true

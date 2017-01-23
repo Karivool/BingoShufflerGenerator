@@ -102,9 +102,8 @@
 	      });
 	    }
 	    if (this.state.squareCount >= 5) {
-	      console.log(this.state.squareCount);
 	      this.setState({
-	        isBingo: this.bingoCheck
+	        isBingo: this.bingoCheck()
 	      });
 	    };
 
@@ -113,38 +112,27 @@
 	    });
 	  },
 	  bingoCheck: function bingoCheck() {
-	    console.log(this.state.squareCount);
+	    var isBingo = false;
 
+	    isBingo = this.rowChecker(isBingo, 0, 5, 1, 4);
+	    isBingo = this.rowChecker(isBingo, 0, 5, 5, 4);
+	    isBingo = this.rowChecker(isBingo, 0, 5, 6, 0);
+	    isBingo = this.rowChecker(isBingo, 4, 5, 4, 0);
+
+	    return isBingo;
+	  },
+	  rowChecker: function rowChecker(isBingo, idx, range, increment, rep) {
 	    var sqIdx = this.state.bingoSquares;
 	    var sqVal = this.state.bingoValues;
-	    var trueCount = void 0;
+	    var trueCount = 0;
 
-	    for (var idx = 0; idx < 4; idx++) {
-	      console.log(idx);
-	      if (sqVal[idx * 5] === false) {
-	        break;
-	      }
-	    };
-	    for (var _idx = 0; _idx < 4; _idx++) {
-	      console.log(_idx);
-	      if (sqVal[_idx + 5] === false) {
-	        break;
-	      }
-	    };
-	    for (var _idx2 = 0; _idx2 < 4; _idx2++) {
-	      console.log(_idx2);
-	      if (sqVal[_idx2 + 6] === false) {
-	        break;
-	      }
-	    };
-	    for (var _idx3 = 20; _idx3 > 4; _idx3 - 4) {
-	      console.log(_idx3);
-	      if (sqVal[_idx3 - 4] === false) {
-	        break;
-	      }
-	    };
+	    for (var i = idx + rep; i < range; i += increment) {}
 
-	    return true;
+	    if (trueCount === 5) {
+	      isBingo = true;
+	    }
+
+	    return isBingo;
 	  },
 
 
