@@ -125,8 +125,10 @@
 	    var sqIdx = this.state.bingoSquares;
 	    var sqVal = this.state.bingoValues;
 	    var trueCount = 0;
-
-	    for (var i = idx + rep; i < range; i += increment) {}
+	    while (rep >= 0) {
+	      for (var i = idx + rep; i < range; i += increment) {}
+	      rep -= 1;
+	    }
 
 	    if (trueCount === 5) {
 	      isBingo = true;

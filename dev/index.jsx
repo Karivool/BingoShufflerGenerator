@@ -73,9 +73,11 @@ let bingoCard = React.createClass({
     let sqIdx = this.state.bingoSquares;
     let sqVal = this.state.bingoValues;
     let trueCount = 0;
+    while (rep >= 0) {
+      for (let i = idx + rep; i < range; i += increment) {
 
-    for (let i = idx + rep; i < range; i += increment) {
-      
+      }
+      rep -= 1;
     }
 
     if (trueCount === 5) {
