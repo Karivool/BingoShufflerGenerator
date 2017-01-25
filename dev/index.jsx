@@ -75,7 +75,7 @@ let bingoCard = React.createClass({
     let trueCount = 0;
     while (rep >= 0) {
       for (let i = idx + rep; i < range; i += increment) {
-
+        debugger
       }
       rep -= 1;
     }
