@@ -70,11 +70,10 @@ let bingoCard = React.createClass({
   },
 
   rowChecker(isBingo, idx, range, increment, rep) {
-    let sqIdx = this.state.bingoSquares;
     let sqVal = this.state.bingoValues;
     let trueCount = 0;
     while (rep >= 0) {
-      for (let i = idx + rep; i < range; i += increment) {
+      for (let i = idx; i < range; i += increment) {
         debugger
       }
       rep -= 1;

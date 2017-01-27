@@ -122,11 +122,10 @@
 	    return isBingo;
 	  },
 	  rowChecker: function rowChecker(isBingo, idx, range, increment, rep) {
-	    var sqIdx = this.state.bingoSquares;
 	    var sqVal = this.state.bingoValues;
 	    var trueCount = 0;
 	    while (rep >= 0) {
-	      for (var i = idx + rep; i < range; i += increment) {
+	      for (var i = idx; i < range; i += increment) {
 	        debugger;
 	      }
 	      rep -= 1;
